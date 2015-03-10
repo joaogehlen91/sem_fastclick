@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap\css\proprio.css">
+	<script type="application/javascript" src="javascript\fastclick-master\lib\fastclick.js"></script>
+<head>
+	<title>Bhaskara</title>
+</head>
+<body>
+	<h3 class="text-center">Bhaskara</h3>
+	<br>
+	<div align="center">
+		<div class="centro">
+			<input class="form-control" id="inputA" type="number" placeholder="valor de a" >
+			<br>
+			<input class="form-control" id="inputB" type="number" placeholder="valor de b" >
+			<br>
+			<input class="form-control" id="inputC" type="number" placeholder="valor de c" >
+			<br>
+			<button type="button" class="btn btn-success btn-lg" onclick="Calcular();">Calcular</button>
+		</div>
+	</div>
+
+	<script>
+	function Calcular(){ 
+		var a = parseFloat(document.getElementById("inputA").value);
+		var b = parseFloat(document.getElementById("inputB").value);
+		var c = parseFloat(document.getElementById("inputC").value);
+		
+		var delta = (b * b) - (4 * a * c);
+		if(delta < 0){
+			alert("Impossivel calcular");
+		}else{
+			delta = Math.sqrt(delta);
+			var x1 = (-b + delta) / (2 * a);
+			var x2 = (-b - delta) / (2 * a);
+			alert("R1 = " + x1 +"\n"+"R2 = "+ x2);
+		}
+		 
+	}
+	</script>
+</body>
+</html>
